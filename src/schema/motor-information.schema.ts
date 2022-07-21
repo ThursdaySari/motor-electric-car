@@ -11,7 +11,15 @@ export class MotorInformation {
   @Prop()
   code: string;
   @Prop()
-  currect: number;
+  currentIn: number;
+  @Prop()
+  currentOut: number;
+  @Prop()
+  voltageIn: number;
+  @Prop()
+  voltageOut: number;
+  @Prop()
+  rpm: number;
   @Prop()
   timestamp: Date;
 }
