@@ -1,4 +1,9 @@
 export interface CreateCurrentRecord {
   code: string;
-  current: number;
+  currentIn: number;
+  currentOut: number;
+  voltageIn: number;
+  voltageOut: number;
+  rpm: number;
+
 }

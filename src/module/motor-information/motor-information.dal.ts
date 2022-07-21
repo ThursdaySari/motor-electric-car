@@ -13,11 +13,15 @@ export class MotorInformationDal {
     @InjectModel(MotorInformation.name)
     private motorInformationModel: Model<MotorInformationDocument>,
   ) {}
-
+ 
   async addLog(motorCurrentRecord: CreateCurrentRecord): Promise<void> {
     const data: MotorInformation = {
       code: motorCurrentRecord.code,
-      currect: motorCurrentRecord.current,
+      currentIn: motorCurrentRecord.currentIn,
+      currentOut: motorCurrentRecord.currentOut,
+      voltageIn: motorCurrentRecord.voltageIn,
+      voltageOut: motorCurrentRecord.voltageOut,
+      rpm: motorCurrentRecord.rpm,
       timestamp: new Date(),
     };
     await this.motorInformationModel.create(data);
