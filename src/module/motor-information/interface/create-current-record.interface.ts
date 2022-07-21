@@ -5,5 +5,4 @@ export interface CreateCurrentRecord {
   voltageIn: number;
   voltageOut: number;
   rpm: number;
-
 }

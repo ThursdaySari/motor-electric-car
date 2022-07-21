@@ -11,10 +11,10 @@ export class MotorInformationController {
     return this.motorInfoService.getHello();
   }
   @Post('save')
-  saveData(@Body() body:CreateCurrentRecord ){
-    this.motorInfoService.SaveMotorData(body)
-    return{
-      success:'success'
-    }
+  saveData(@Body() body: CreateCurrentRecord) {
+    this.motorInfoService.SaveMotorData(body);
+    return {
+      success: 'success',
+    };
   }
 }

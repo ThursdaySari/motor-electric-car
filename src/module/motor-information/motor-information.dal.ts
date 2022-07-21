@@ -13,7 +13,7 @@ export class MotorInformationDal {
     @InjectModel(MotorInformation.name)
     private motorInformationModel: Model<MotorInformationDocument>,
   ) {}
- 
+
   async addLog(motorCurrentRecord: CreateCurrentRecord): Promise<void> {
     const data: MotorInformation = {
       code: motorCurrentRecord.code,

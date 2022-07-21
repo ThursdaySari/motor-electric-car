@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MotorInformationModule } from './module/motor-information/motor-information.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ConfigModule } from '@nestjs/config';
       user: process.env.DATABASE_USER,
       pass: process.env.DATABASE_PASSWORD,
     }),
+    ScheduleModule.forRoot(),
     MotorInformationModule,
   ],
 })
