@@ -17,4 +17,9 @@ export class MotorInformationController {
       success: 'success',
     };
   }
+  @Get('/')
+  getData() {
+    const result = this.motorInfoService.GetMotorData();
+    return result;
+  }
 }

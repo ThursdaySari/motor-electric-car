@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { MotorInformationDal } from './motor-information.dal';
 import { CreateCurrentRecord } from './interface/create-current-record.interface';
 import { Interval } from '@nestjs/schedule';
+import { MotorInformation } from '../../schema/motor-information.schema';
 @Injectable()
 export class MotorInformationService {
   constructor(private motorInformationDal: MotorInformationDal) {}
@@ -9,7 +10,6 @@ export class MotorInformationService {
     return 'Hello World!';
   }
 
-  @Interval(2000) // ms
   MockupData() {
     console.log('Mockup running...');
     const code = 'A01';
@@ -29,7 +29,11 @@ export class MotorInformationService {
     });
   }
 
-  SaveMotorData(metaData: CreateCurrentRecord) {
-    this.motorInformationDal.addLog(metaData);
+  SaveMotorData(metaData: CreateCurrentRecord): void {
+    this.motorInformationDal.saveData(metaData);
+  }
+
+  async GetMotorData(): Promise<MotorInformation[]> {
+    return this.motorInformationDal.getData();
   }
 }

@@ -14,7 +14,7 @@ export class MotorInformationDal {
     private motorInformationModel: Model<MotorInformationDocument>,
   ) {}
 
-  async addLog(motorCurrentRecord: CreateCurrentRecord): Promise<void> {
+  async saveData(motorCurrentRecord: CreateCurrentRecord): Promise<void> {
     const data: MotorInformation = {
       code: motorCurrentRecord.code,
       currentIn: motorCurrentRecord.currentIn,
@@ -25,5 +25,10 @@ export class MotorInformationDal {
       timestamp: new Date(),
     };
     await this.motorInformationModel.create(data);
+  }
+
+  async getData(): Promise<MotorInformation[]> {
+    const result = await this.motorInformationModel.find().exec();
+    return result;
   }
 }
