@@ -28,7 +28,7 @@ export class MotorInformationDal {
   }
 
   async getData(): Promise<MotorInformation[]> {
-    const result = await this.motorInformationModel.find().exec();
+    const result = await this.motorInformationModel.find().limit(50).exec();
     return result;
   }
 }
