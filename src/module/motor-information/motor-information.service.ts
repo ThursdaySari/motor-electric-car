@@ -26,6 +26,7 @@ export class MotorInformationService {
       rpm,
       currentOut,
       voltageOut,
+      fft: [0],
     });
   }
 

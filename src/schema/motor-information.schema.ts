@@ -20,6 +20,8 @@ export class MotorInformation {
   voltageOut: number;
   @Prop()
   rpm: number;
+  @Prop([Number])
+  fft: number[];
   @Prop()
   timestamp: Date;
 }

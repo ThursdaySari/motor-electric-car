@@ -22,6 +22,7 @@ export class MotorInformationDal {
       voltageIn: motorCurrentRecord.voltageIn,
       voltageOut: motorCurrentRecord.voltageOut,
       rpm: motorCurrentRecord.rpm,
+      fft: motorCurrentRecord.fft,
       timestamp: new Date(),
     };
     await this.motorInformationModel.create(data);
