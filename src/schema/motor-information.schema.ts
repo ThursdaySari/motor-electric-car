@@ -10,16 +10,7 @@ export type MotorInformationDocument = MotorInformation & Document;
 export class MotorInformation {
   @Prop()
   code: string;
-  @Prop()
-  currentIn: number;
-  @Prop()
-  currentOut: number;
-  @Prop()
-  voltageIn: number;
-  @Prop()
-  voltageOut: number;
-  @Prop()
-  rpm: number;
+
   @Prop([Number])
   fft: number[];
   @Prop()
