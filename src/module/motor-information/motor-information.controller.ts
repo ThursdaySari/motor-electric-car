@@ -22,4 +22,11 @@ export class MotorInformationController {
     const result = this.motorInfoService.GetMotorData();
     return result;
   }
+  @Post('saveRawData')
+  saveRawData(@Body() body: any) {
+    this.motorInfoService.SaveRawData(body.irms);
+    return {
+      success: 'success',
+    };
+  }
 }

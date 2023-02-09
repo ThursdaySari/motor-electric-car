@@ -7,11 +7,14 @@ import {
   MotorInformation,
   MotorInformationSchema,
 } from '../../schema/motor-information.schema';
+import { RawsensorInformationSchema } from '../../schema/raw-sensor-info.schema';
+import { RawsensorInfo } from '../../schema/raw-sensor-info.schema';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: MotorInformation.name, schema: MotorInformationSchema },
+      { name: RawsensorInfo.name, schema: RawsensorInformationSchema },
     ]),
   ],
   controllers: [MotorInformationController],

@@ -27,4 +27,8 @@ export class MotorInformationService {
   async GetMotorData(): Promise<MotorInformation[]> {
     return this.motorInformationDal.getData();
   }
+
+  SaveRawData(irms: number): void {
+    this.motorInformationDal.saveRawData(irms);
+  }
 }
