@@ -41,4 +41,8 @@ export class MotorInformationDal {
     };
     await this.rawsensorInfomation.create(data);
   }
+  async getRawData(): Promise<RawsensorInfo[]> {
+    const result = await this.rawsensorInfomation.find().limit(10000).exec();
+    return result;
+  }
 }

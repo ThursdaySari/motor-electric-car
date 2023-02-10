@@ -3,6 +3,7 @@ import { MotorInformationModule } from './module/motor-information/motor-informa
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
+import { RawsensorInfo } from './schema/raw-sensor-info.schema';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ScheduleModule } from '@nestjs/schedule';
     }),
     ScheduleModule.forRoot(),
     MotorInformationModule,
+    RawsensorInfo,
   ],
 })
 export class AppModule {}
