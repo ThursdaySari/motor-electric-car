@@ -33,6 +33,16 @@ export class MotorInformationDal {
     const result = await this.motorInformationModel.find().limit(10000).exec();
     return result;
   }
+
+  async getfftData(): Promise<MotorInformation[]> {
+    const result = await this.motorInformationModel
+      .find({ code: 'A112' })
+      .limit(10000)
+      .sort({ _id: -1 })
+      .exec();
+    return result;
+  }
+
   async saveRawData(irms: number): Promise<void> {
     const data: RawsensorInfo = {
       code: 'A112',
