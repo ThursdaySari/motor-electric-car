@@ -11,7 +11,7 @@ export class MotorInformationService {
     return 'Hello World!';
   }
 
-  // @Interval(3000)
+  // @Interval(2000)
   MockupData() {
     console.log('Receiving running...');
     const code = 'A01';
